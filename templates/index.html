@@ -1,46 +1,69 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="{% static 'css/style.css' %}" rel="stylesheet">
-</head>
-<body>
-
-<div class="header">
-  <h2><a style="text-decoration: none; color: black;" href="/">Test Blog</a></h2><br>
-  {% if user.is_authenticated %}
-  <a href="postedit"><button class="button">Make a Post</button></a>
-  <a class="login" href="logout"><p class="logintext"><img src="{{ user.profile.image.url }}" alt=""></p></a>
-  {% else %}
-  <a class="login" href="login"><p class="logintext">Login/Signup</p></a>
-  {% endif %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type ="text/css" href="{% static 'home/css/bootstrap.css' %}"/> 
+    <link rel="stylesheet" type ="text/css" href="{% static 'css/style.css' %}"/>
+     
   
-  
-</div>
 
-<div class="row">
-  <div class="leftcolumn">
-    {% for post in posts reversed %}
-    <div class="card">
-      <img class="rounded-circle account-img" src="{{ post.author.profile.image.url }}" alt="">
-      <a style="text-decoration: none; color: black;" href="/post/{{post.id}}">
-        
-        <h2>{{post.author.username}} - {{post.title}}</h2>
-        <!--<h5>{{post.created_at}}</h5>-->
-        <p class="text">{{post.body}}</p>
-        {% if post.body|length >= 515 %}
-        <a href="javascript:void();" class="readmore-btn">Read More</a>
-        {% else %}
+    
+  </head>
 
-        {% endif %}
-      </a>
+  <body>
+
+  <div class="header">
+    <div class="sidebar">
+      {% if user.is_authenticated %}
+      <a href="postedit"><button class="btn btn-secondary post">+</button></a>
+      
+      <a href="logout"><img class="rounded-circle user" src="{{ user.profile.image.url }}" alt=""></a>
+      {% else %}
+      <a href="login"><button type="button" class="btn btn-primary login">Login/Signup</button></a>
+      {% endif %}
     </div>
-    {% endfor %}
+    
+    <h2><a style="text-decoration: none; color: black;" href="/">Test Blog</a></h2><br>
+    
   </div>
-</div>
+  
+  <div class="container">
+      {% for post in posts reversed %}
+          <div class="jumbotron">
+            <img class="rounded-circle profile" src="{{ post.author.profile.image.url }}" alt="">
+            <div class="content">
+              <a style="text-decoration: none; color: black;" href="/post/{{post.id}}">
+              
+                <h2>{{post.title}}</h2>
+                <p><small>by {{post.author.username}}</small></p>
+                <!--<h5>{{post.created_at}}</h5>-->
+                
+                
+                {% if post.body|length >= 515 %}
+                <div class="textcont">
+                  <p>{{post.body|slice:"0:515"}}<span id="dots">...</span><span id="more">{{post.body|slice:"515:1000000"}}</span></p>
+                  
+                </div>
+                
+                {% else %}
+                <div class="textcont">
+                  <p class="text">{{post.body}}</p>
+                </div>
+                {% endif %}
+              </a>
+              {% if post.body|length >= 515 %}
+              <button onclick="myFunction()" id="myBtn">Read more</button>
+              {% else %}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="{% static 'js/main.js' %}"></script>
-</body>
+              {% endif %}
+            </div>
+          </div>
+          
+      {% endfor %}
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
 </html>
