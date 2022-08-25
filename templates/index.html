@@ -40,23 +40,15 @@
                 <!--<h5>{{post.created_at}}</h5>-->
                 
                 
-                {% if post.body|length >= 515 %}
+                
                 <div class="textcont">
-                  <p>{{post.body|slice:"0:515"}}<span id="dots">...</span><span id="more">{{post.body|slice:"515:1000000"}}</span></p>
+                  <p>{{post.body}}</p>
                   
                 </div>
                 
-                {% else %}
-                <div class="textcont">
-                  <p class="text">{{post.body}}</p>
-                </div>
-                {% endif %}
+                
               </a>
-              {% if post.body|length >= 515 %}
-              <button onclick="myFunction()" id="myBtn">Read more</button>
-              {% else %}
-
-              {% endif %}
+              
             </div>
           </div>
           
