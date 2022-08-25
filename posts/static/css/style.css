@@ -22,10 +22,16 @@
     padding:20px;
     margin-bottom:50px;
   }
+  .profile_btn{
+    border-radius: 75px;
+    padding: 0;
+    border:0;
+  }
+
   .user{
     width:100px;
     height:100px;
-    position:absolute;
+    position:fixed;
     right:20px;
   }
   .post{
@@ -41,6 +47,10 @@
   }
   .content{
     width:100%;
+  }
+  .pers_profile{
+   
+    width:150px;
   }
   .profile{
     margin-right:20px;
