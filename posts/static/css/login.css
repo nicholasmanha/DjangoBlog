@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    padding: 20px;
+    background: #D3D3D3;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .jumbotron{
+    display:block;
+    text-align:center;
+    width:1000px;
+    padding:150px;
+  }
+  .center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  input{
+    width:100%;
+    margin-bottom:30px;
+  }
+  .login{
+    width: 80%;
+    border-radius: 10px;
+  }
+  .centerbutton{
+    text-align: center;
+  }
+  .container{
+    width:100%;
+    display:inline-block;
+    text-align:left;
+    
+  }
+  p{
+    margin: 5px 5px 5px 0;
+  }

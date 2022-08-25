@@ -69,6 +69,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
+SECRET_KEY = "cuwr+546xlkf(lhl&w9#6^uza#kr7l9qjgtkrs_yjyfm+^9s6y"
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
