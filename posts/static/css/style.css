@@ -9,9 +9,7 @@
     max-width: 1000px;
     margin: auto;
   }
-  .btn{
-    float:right;
-  }
+ 
   .jumbotron{
     width:100%;
     display: flex;
@@ -23,6 +21,7 @@
     margin-bottom:50px;
   }
   .profile_btn{
+    float:right;
     border-radius: 75px;
     padding: 0;
     border:0;
@@ -61,6 +60,8 @@
   }
   .textcont{
     word-wrap: break-word;
+    overflow-wrap: break-word;
+    width:750px;
   }
   .login{
     position:absolute;
