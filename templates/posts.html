@@ -1,66 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type ="text/css" href="{% static 'css/style.css' %}"/>  
+    <link rel="stylesheet" type ="text/css" href="{% static 'css/posts.css' %}"/>  
+  </head>
+  <body>
 
-body {
-  font-family: Arial;
-  padding: 20px;
-  background: #f1f1f1;
-}
-
-.header {
-  padding: 2px;
-  font-size: 40px;
-  text-align: center;
-  background: white;
-}
-
-.leftcolumn {   
-  float: left;
-  width: 100%;
-}
-
-.card {
-   background-color: white;
-   padding: 20px;
-   margin-top: 20px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-</style>
-</head>
-<body>
-
-<div class="header">
-  <h2><a style="text-decoration: none; color: black;" href="/">Test Blog</a></h2>
-</div>
-
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
+    <div class="header">
       
-        <h1>{{posts.title}}</h1>
-        <!--<h5>{{posts.created_at}}</h5>-->
-        <p>{{posts.body}}</p>
+      
+      <h2><a style="text-decoration: none; color: black;" href="/">Test Blog</a></h2><br>
+      
     </div>
-  </div>
-</div>
 
-</body>
+  
+    <div class="jumbotron">
+      <div class="container">
+        <div class="posthead">
+          <img class="rounded-circle profile" src="{{ posts.author.profile.image.url }}" alt="">
+          <h1>{{posts.title}}</h1>
+          <p><small>by {{posts.author.username}}</small></p>
+        </div>
+        
+        <!--<h5>{{posts.created_at}}</h5>-->
+        <div class="textcont2">
+          <p>{{posts.body}}</p>
+        </div>
+        
+      </div>
+      
+    </div>
+          
+      
+
+  </body>
 </html>

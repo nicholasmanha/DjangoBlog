@@ -63,8 +63,9 @@
     overflow-wrap: break-word;
     width:750px;
   }
-  .login{
-    position:absolute;
+  .loginsignup{
+    display:inline;
+    position:fixed;
     right:20px;
   }
   .header {
@@ -126,9 +127,26 @@
   
   
   
-  @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
-      width: 100%;
-      padding: 0;
+  @media screen and (max-width: 1350px) {
+    .login{
+      display:block;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    
+    .textcont{
+      width:520px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    
+    .textcont{
+      width:350px;
+    }
+  }
+  @media screen and (max-width: 319px) {
+    
+    .container{
+      width:100%;
     }
   }

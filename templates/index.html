@@ -29,7 +29,11 @@
         </div>
       </div>
       {% else %}
-      <a href="login"><button type="button" class="btn btn-primary login">Login/Signup</button></a>
+      <div class="loginsignup">
+        <a href="login"><button type="button" class="btn btn-primary login">Login</button></a>
+        <a href="register"><button type="button" class="btn btn-primary signup">Signup</button></a>
+      </div>
+      
       {% endif %}
     </div>
     
@@ -46,7 +50,7 @@
               
                 <h2>{{post.title}}</h2>
                 <p><small>by {{post.author.username}}</small></p>
-                <!--<h5>{{post.created_at}}</h5>-->
+                
                 
                 
                 
