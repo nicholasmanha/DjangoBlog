@@ -9,15 +9,10 @@
     <link rel="stylesheet" type ="text/css" href="{% static 'css/posts.css' %}"/>  
   </head>
   <body>
-
     <div class="header">
-      
-      
       <h2><a style="text-decoration: none; color: black;" href="/">Test Blog</a></h2><br>
-      
     </div>
-
-  
+    
     <div class="jumbotron">
       <div class="container">
         <div class="posthead">
@@ -25,17 +20,12 @@
           <h1>{{posts.title}}</h1>
           <p><small>by {{posts.author.username}}</small></p>
         </div>
-        
-        <!--<h5>{{posts.created_at}}</h5>-->
+
         <div class="textcont2">
           <p>{{posts.body}}</p>
         </div>
-        
-      </div>
-      
-    </div>
-          
-      
 
+      </div>
+    </div>
   </body>
 </html>

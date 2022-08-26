@@ -11,35 +11,24 @@
   <body>
 
     <div class="header">
-      
-      
       <h2><a style="text-decoration: none; color: black;" href="/">Test Blog</a></h2><br>
-      
     </div>
 
-
-
-  
-      <div class="jumbotron">
-        <div class="container">
-          <form method="POST" action="postedit">
-            {% csrf_token %}
-            <h3>Make a New Post</h3>
-            <p>Title</p>
-            <input name="title" type="text"/><br>
-            <p>Body</p>
-            <textarea name="body" class="body" type="text" ></textarea>
-            <!--<textarea name="test" class="body" type="text" placeholder="Input text here..."></textarea>-->
-            <div class="middle">
-              <input class="btn btn-primary submit"type="submit" value="Post"/>
-            </div>
-            
-        
-        </form>
-        </div>
+    <div class="jumbotron">
+      <div class="container">
+        <form method="POST" action="postedit">
+          {% csrf_token %}
+          <h3>Make a New Post</h3>
+          <p>Title</p>
+          <input name="title" type="text"/><br>
+          <p>Body</p>
+          <textarea name="body" class="body" type="text" ></textarea>
           
-      </div>
-    
-
+          <div class="middle">
+            <input class="btn btn-primary submit"type="submit" value="Post"/>
+          </div>
+        </form>
+      </div>       
+    </div>
   </body>
 </html>
